@@ -14,6 +14,12 @@ declare module "styled-components" {
       option_dot: string;
       text_default: string;
       text_light: string;
-    }
+    };
+    fontWeights: {
+      light_300: string;
+      regular_400: string;
+      medium_500: string;
+      regular_700: string;
+    };
   }
 }
