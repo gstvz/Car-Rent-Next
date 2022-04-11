@@ -1,8 +1,12 @@
 import type { NextPage } from "next";
-import { Layout } from "@components";
+import { Card, Layout } from "@components";
 
 const Home: NextPage = () => {
-  return <Layout pageTitle="Exotic Cars">Conteúdo</Layout>;
+  return (
+    <Layout pageTitle="Exotic Cars">
+      <Card />
+    </Layout>
+  );
 };
 
 export default Home;

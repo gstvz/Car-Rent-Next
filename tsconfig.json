@@ -13,6 +13,7 @@
     "moduleResolution": "node",
     "paths": {
       "@components": ["./src/components"],
+      "@hooks": ["./src/shared/hooks"],
       "@icons": ["./src/shared/icons"],
       "@styles": ["./src/shared/styles"]
     },
