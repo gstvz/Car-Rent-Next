@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import { IoCalendar, IoLocationSharp, IoSearchOutline } from "../../shared/icons/index";
+import { IoCalendar, IoLocationSharp, IoSearchOutline } from "@icons";
 import { useTheme } from "styled-components";
 
 export const Header = () => {
@@ -16,7 +16,10 @@ export const Header = () => {
           <S.SearchParamsWrapper>
             <S.SearchParam>
               <IoLocationSharp size={18} color={theme.colors.option_dot} />
-              <S.SearchParamInput placeholder="North Carolina, NC 90025" disabled />
+              <S.SearchParamInput
+                placeholder="North Carolina, NC 90025"
+                disabled
+              />
             </S.SearchParam>
             <S.SearchParam>
               <IoCalendar size={18} color={theme.colors.option_dot} />
@@ -32,14 +35,10 @@ export const Header = () => {
           </S.SearchButton>
         </S.SearchBar>
         <S.ButtonsContainer>
-          <S.SignButton>
-            Sign up
-          </S.SignButton>
-          <S.SignButton border>
-            Sign in
-          </S.SignButton>
+          <S.SignButton>Sign up</S.SignButton>
+          <S.SignButton border>Sign in</S.SignButton>
         </S.ButtonsContainer>
       </S.Container>
     </S.Header>
-  )
-}
+  );
+};
