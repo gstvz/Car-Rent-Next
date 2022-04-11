@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
-import { Header } from "@components";
+import { Layout } from "@components";
 
 const Home: NextPage = () => {
-  return <Header />;
+  return <Layout pageTitle="Exotic Cars">Conteúdo</Layout>;
 };
 
 export default Home;
