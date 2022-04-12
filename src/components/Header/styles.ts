@@ -7,7 +7,6 @@ type SignButtonProps = {
 export const Header = styled.header`
   box-shadow: 0px 10px 30px #0000001a;
   height: 8rem;
-  width: 100vw;
 `;
 
 export const Container = styled.div`
@@ -50,7 +49,7 @@ export const SearchParamsWrapper = styled.div`
   display: flex;
   flex: 1;
   justify-content: space-around;
-`
+`;
 
 export const SearchParam = styled.div`
   align-items: center;
@@ -93,7 +92,10 @@ export const ButtonsContainer = styled.div`
 
 export const SignButton = styled.button<SignButtonProps>`
   background: none;
-  ${({ border, theme }) => border ? `border: 2px solid ${theme.colors.button_primary}` : `border: 2px solid ${theme.colors.background_primary}`};
+  ${({ border, theme }) =>
+    border
+      ? `border: 2px solid ${theme.colors.button_primary}`
+      : `border: 2px solid ${theme.colors.background_primary}`};
   border-radius: 13px;
   color: ${({ theme }) => theme.colors.button_primary};
   font-weight: ${({ theme }) => theme.fontWeights.regular_700};
@@ -101,7 +103,7 @@ export const SignButton = styled.button<SignButtonProps>`
 
   &:hover {
     background: ${({ theme }) => theme.colors.button_primary};
-    border: 2px solid ${({ theme }) => theme.colors.button_primary};  
+    border: 2px solid ${({ theme }) => theme.colors.button_primary};
     color: ${({ theme }) => theme.colors.background_primary};
-  };
+  }
 `;
