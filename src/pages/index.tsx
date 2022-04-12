@@ -1,10 +1,12 @@
 import type { NextPage } from "next";
-import { Card, Layout } from "@components";
+import { CarList, Layout, Section } from "@components";
 
 const Home: NextPage = () => {
   return (
     <Layout pageTitle="Exotic Cars">
-      <Card />
+      <Section>
+        <CarList />
+      </Section>
     </Layout>
   );
 };
