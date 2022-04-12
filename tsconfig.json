@@ -15,7 +15,9 @@
       "@components": ["./src/components"],
       "@hooks": ["./src/shared/hooks"],
       "@icons": ["./src/shared/icons"],
-      "@styles": ["./src/shared/styles"]
+      "@styles": ["./src/shared/styles"],
+      "@types": ["./src/shared/types"],
+      "@utils": ["./src/shared/utils"]
     },
     "resolveJsonModule": true,
     "isolatedModules": true,
