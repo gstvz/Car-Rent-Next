@@ -1,5 +1,10 @@
 import * as S from "./styles";
-import { IoCalendar, IoLocationSharp, IoSearchOutline } from "@icons";
+import {
+  IoCalendar,
+  IoLocationSharp,
+  IoMenuOutline,
+  IoSearchOutline,
+} from "@icons";
 import { useTheme } from "styled-components";
 
 export const Header = () => {
@@ -38,6 +43,9 @@ export const Header = () => {
           <S.SignButton>Sign up</S.SignButton>
           <S.SignButton border>Sign in</S.SignButton>
         </S.ButtonsContainer>
+        <S.MobileMenu>
+          <IoMenuOutline size={28} />
+        </S.MobileMenu>
       </S.Container>
     </S.Header>
   );

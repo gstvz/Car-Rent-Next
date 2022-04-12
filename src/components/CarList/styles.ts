@@ -13,4 +13,9 @@ export const CarList = styled.ul`
   gap: 24px;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 1068px) {
+    align-items: center;
+    flex-direction: column;
+  }
 `;

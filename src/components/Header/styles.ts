@@ -43,6 +43,11 @@ export const SearchBar = styled.div`
   justify-content: space-around;
   height: 3.6rem;
   width: 54rem;
+
+  @media (max-width: 1068px) {
+    background: none;
+    justify-content: flex-end;
+  }
 `;
 
 export const SearchParamsWrapper = styled.div`
@@ -54,6 +59,10 @@ export const SearchParamsWrapper = styled.div`
 export const SearchParam = styled.div`
   align-items: center;
   display: flex;
+
+  @media (max-width: 1068px) {
+    display: none;
+  }
 `;
 
 export const SearchParamInput = styled.input`
@@ -88,6 +97,10 @@ export const SearchButton = styled.button`
 export const ButtonsContainer = styled.div`
   display: flex;
   gap: 10px;
+
+  @media (max-width: 1068px) {
+    display: none;
+  }
 `;
 
 export const SignButton = styled.button<SignButtonProps>`
@@ -106,4 +119,20 @@ export const SignButton = styled.button<SignButtonProps>`
     border: 2px solid ${({ theme }) => theme.colors.button_primary};
     color: ${({ theme }) => theme.colors.background_primary};
   }
+`;
+
+export const MobileMenu = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  filter: brightness(0) saturate(100%) invert(57%) sepia(34%) saturate(3624%)
+    hue-rotate(207deg) brightness(98%) contrast(95%);
+  height: 2.8rem;
+  justify-content: center;
+  width: 2.8rem;
+
+  @media (min-width: 1068px) {
+    display: none;
+  } ;
 `;
