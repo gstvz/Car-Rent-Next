@@ -1,1 +1,1 @@
-export { IoCalendar, IoChevronUpOutline, IoLocationSharp, IoMenuOutline, IoSearchOutline } from "react-icons/io5";
+export { IoCalendar, IoChevronUpOutline, IoCloseCircleOutline, IoLocationSharp, IoMenuOutline, IoSearchOutline } from "react-icons/io5";
