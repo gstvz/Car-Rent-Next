@@ -19,7 +19,7 @@ const Home = ({ cars }: Props) => {
   return (
     <Layout pageTitle="Exotic Cars">
       <Section>
-        {cars.length > 0 ? (
+        {cars.length === 0 ? (
           <ErrorMessage message="There are no cars available!" />
         ) : (
           <CarList cars={cars} />
