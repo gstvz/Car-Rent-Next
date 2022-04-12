@@ -1,6 +1,6 @@
 import { CarList, Layout, Section } from "@components";
+import { getCars } from "@services";
 import { Car } from "@types";
-import { createFilePath, readFile } from "@utils";
 
 type Props = {
   cars: Car[];
@@ -19,12 +19,11 @@ const Home = ({ cars }: Props) => {
 export default Home;
 
 export async function getStaticProps() {
-  const filePath = createFilePath();
-  const fileData = readFile(filePath);
+  const { cars } = await getCars();
 
   return {
     props: {
-      cars: fileData.cars,
+      cars,
     },
   };
 }
