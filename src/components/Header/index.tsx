@@ -6,6 +6,7 @@ import {
   IoSearchOutline,
 } from "@icons";
 import { useTheme } from "styled-components";
+import Link from "next/link";
 
 export const Header = () => {
   const theme = useTheme();
@@ -13,10 +14,14 @@ export const Header = () => {
   return (
     <S.Header>
       <S.Container>
-        <S.LogoWrapper>
-          <S.LogoExotic>EXOTIC</S.LogoExotic>
-          <S.LogoCars>CARS</S.LogoCars>
-        </S.LogoWrapper>
+        <Link href="/">
+          <a>
+            <S.LogoWrapper>
+              <S.LogoExotic>EXOTIC</S.LogoExotic>
+              <S.LogoCars>CARS</S.LogoCars>
+            </S.LogoWrapper>
+          </a>
+        </Link>
         <S.SearchBar>
           <S.SearchParamsWrapper>
             <S.SearchParam>
