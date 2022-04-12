@@ -1,4 +1,5 @@
-import { CarList, Layout, Section } from "@components";
+import { CarList, Layout, ScrollButton, Section } from "@components";
+import { useScrollToTop } from "@hooks";
 import { getCars } from "@services";
 import { Car } from "@types";
 
@@ -7,10 +8,13 @@ type Props = {
 };
 
 const Home = ({ cars }: Props) => {
+  const { visibility, scrollToTop } = useScrollToTop();
+
   return (
     <Layout pageTitle="Exotic Cars">
       <Section>
         <CarList cars={cars} />
+        {visibility && <ScrollButton scrollToTop={scrollToTop} />}
       </Section>
     </Layout>
   );
