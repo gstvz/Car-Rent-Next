@@ -1,9 +1,9 @@
 import * as S from "./styles";
 
-type SectionProps = {
+type Props = {
   children: React.ReactNode;
 };
 
-export const Section = ({ children }: SectionProps) => {
+export const Section = ({ children }: Props) => {
   return <S.Section>{children}</S.Section>;
 };

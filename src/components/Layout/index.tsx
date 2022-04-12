@@ -2,12 +2,12 @@ import * as S from "./styles";
 import { Header } from "@components";
 import Head from "next/head";
 
-type LayoutProps = {
+type Props = {
   children: React.ReactNode;
   pageTitle: string;
 };
 
-export const Layout = ({ children, pageTitle }: LayoutProps) => {
+export const Layout = ({ children, pageTitle }: Props) => {
   return (
     <>
       <Head>
