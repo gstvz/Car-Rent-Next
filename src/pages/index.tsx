@@ -1,14 +1,30 @@
-import type { NextPage } from "next";
 import { CarList, Layout, Section } from "@components";
+import { Car } from "@types";
+import { createFilePath, readFile } from "@utils";
 
-const Home: NextPage = () => {
+type Props = {
+  cars: Car[];
+};
+
+const Home = ({ cars }: Props) => {
   return (
     <Layout pageTitle="Exotic Cars">
       <Section>
-        <CarList />
+        <CarList cars={cars} />
       </Section>
     </Layout>
   );
 };
 
 export default Home;
+
+export async function getStaticProps() {
+  const filePath = createFilePath();
+  const fileData = readFile(filePath);
+
+  return {
+    props: {
+      cars: fileData.cars,
+    },
+  };
+}

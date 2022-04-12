@@ -1,18 +1,18 @@
-import { Card } from "@components";
 import * as S from "./styles";
+import { Card } from "@components";
+import { Car } from "@types";
 
-export const CarList = () => {
+type Props = {
+  cars: Car[];
+};
+
+export const CarList = ({ cars }: Props) => {
   return (
     <S.Container>
       <S.CarList>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+        {cars.map((car) => (
+          <Card key={car.id} car={car} />
+        ))}
       </S.CarList>
     </S.Container>
   );

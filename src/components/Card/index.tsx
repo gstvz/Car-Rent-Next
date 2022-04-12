@@ -1,8 +1,13 @@
 import * as S from "./styles";
 import Image from "next/image";
 import { useHover } from "@hooks";
+import { Car } from "@types";
 
-export const Card = () => {
+type Props = {
+  car: Car;
+};
+
+export const Card = ({ car }: Props) => {
   const { isHovering, handleHovering } = useHover();
 
   return (
@@ -13,8 +18,8 @@ export const Card = () => {
     >
       <S.Header>
         <S.MakeAndModelWrapper>
-          <S.CarMake>Ferrari</S.CarMake>
-          <S.CarModel>CALIFORNIA</S.CarModel>
+          <S.CarMake>{car.make}</S.CarMake>
+          <S.CarModel>{car.model}</S.CarModel>
         </S.MakeAndModelWrapper>
         <S.OptionsWrapper>
           <S.OptionDot />
@@ -24,18 +29,18 @@ export const Card = () => {
       </S.Header>
       <S.CarImageWrapper>
         <Image
-          src="https://i.ibb.co/vX5GtS9/Mask-Group-11.png"
+          src={car.thumbnail}
           height={107}
-          width={244}
+          width={240}
           alt="Car"
-          layout="intrinsic"
+          objectFit="scale-down"
         />
       </S.CarImageWrapper>
       <S.Footer isHovering={isHovering}>
         <S.BookNow isHovering={isHovering}>Book Now</S.BookNow>
         <S.CarPriceWrapper>
           <S.MoneySign>$</S.MoneySign>
-          <S.CarPrice>725</S.CarPrice>
+          <S.CarPrice>{car.price}</S.CarPrice>
           <S.CarPriceDay>/day</S.CarPriceDay>
         </S.CarPriceWrapper>
       </S.Footer>
