@@ -32,7 +32,7 @@ const Home = ({ cars }: Props) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const { cars } = await getCars();
 
   return {
@@ -40,4 +40,4 @@ export async function getStaticProps() {
       cars,
     },
   };
-}
+};

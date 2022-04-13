@@ -1,23 +1,25 @@
+import { Car } from "@types";
 import Image from "next/image";
 import { ActionButton } from "../ActionButton";
 import * as S from "./styles";
 
-export const CarDetails = () => {
+type Props = {
+  car: Car;
+};
+
+export const CarDetails = ({ car }: Props) => {
   return (
     <S.Container>
       <S.Car>
         <S.Header>
-          <Image
-            src="https://i.ibb.co/JxBFp5X/No-Path-Copia-10.png"
-            alt="Car"
-            width={70}
-            height={90}
-          />
+          <Image src={car.makeLogo} alt="Car" width={70} height={90} />
           <S.CarInfoWrapper>
-            <S.MakeAndModel>Ferrari California</S.MakeAndModel>
+            <S.MakeAndModel>
+              {`${car.make} ${car.model}`}
+            </S.MakeAndModel>
             <S.PriceWrapper>
               <S.PriceSign>$</S.PriceSign>
-              725/day
+              {car.price}/day
             </S.PriceWrapper>
           </S.CarInfoWrapper>
         </S.Header>
@@ -26,7 +28,7 @@ export const CarDetails = () => {
             <ActionButton back onPress={() => {}} text="Back to catalog" />
             <S.CarPhoto>
               <Image
-                src="https://i.ibb.co/Lg6wLCf/Mask-Group-13.png"
+                src={car.colors[0].photo}
                 alt="Car"
                 width={600}
                 height={300}
@@ -39,7 +41,7 @@ export const CarDetails = () => {
         </S.PhotoWrapper>
       </S.Car>
       <S.IdAndColor>
-        <S.Id>01</S.Id>
+        <S.Id>{`${car.id}`.padStart(2, "0")}</S.Id>
         <S.Color>Red</S.Color>
       </S.IdAndColor>
     </S.Container>
