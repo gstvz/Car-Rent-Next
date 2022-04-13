@@ -5,9 +5,10 @@ import { Car } from "@types";
 
 type Props = {
   car: Car;
+  onPress: () => void;
 };
 
-export const Card = ({ car }: Props) => {
+export const Card = ({ car, onPress }: Props) => {
   const { isHovering, handleHovering } = useHover();
 
   return (
@@ -15,6 +16,7 @@ export const Card = ({ car }: Props) => {
       onMouseEnter={handleHovering}
       onMouseLeave={handleHovering}
       isHovering={isHovering}
+      onClick={onPress}
     >
       <S.Header>
         <S.MakeAndModelWrapper>
