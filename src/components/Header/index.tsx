@@ -7,9 +7,11 @@ import {
 } from "@icons";
 import { useTheme } from "styled-components";
 import Link from "next/link";
+import { useUnavailableToast } from "@hooks";
 
 export const Header = () => {
   const theme = useTheme();
+  const { showUnavailableToast } = useUnavailableToast();
 
   return (
     <S.Header>
@@ -22,7 +24,7 @@ export const Header = () => {
             </S.LogoWrapper>
           </a>
         </Link>
-        <S.SearchBar>
+        <S.SearchBar onClick={showUnavailableToast}>
           <S.SearchParamsWrapper>
             <S.SearchParam>
               <IoLocationSharp size={18} color={theme.colors.option_dot} />
@@ -45,10 +47,12 @@ export const Header = () => {
           </S.SearchButton>
         </S.SearchBar>
         <S.ButtonsContainer>
-          <S.SignButton>Sign up</S.SignButton>
-          <S.SignButton border>Sign in</S.SignButton>
+          <S.SignButton onClick={showUnavailableToast}>Sign up</S.SignButton>
+          <S.SignButton onClick={showUnavailableToast} border>
+            Sign in
+          </S.SignButton>
         </S.ButtonsContainer>
-        <S.MobileMenu>
+        <S.MobileMenu onClick={showUnavailableToast}>
           <IoMenuOutline size={28} />
         </S.MobileMenu>
       </S.Container>

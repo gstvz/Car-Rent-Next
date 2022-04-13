@@ -68,6 +68,7 @@ export const SearchParam = styled.div`
 export const SearchParamInput = styled.input`
   background: none;
   border: none;
+  cursor: pointer;
   font-size: 1.2rem;
   font-weight: ${({ theme }) => theme.fontWeights.medium_500};
   margin-left: 0.2rem;
@@ -76,6 +77,7 @@ export const SearchParamInput = styled.input`
 export const SearchParamDateInput = styled.input`
   background: none;
   border: none;
+  cursor: pointer;
   font-size: 1.2rem;
   font-weight: ${({ theme }) => theme.fontWeights.medium_500};
   margin-left: 0.2rem;
