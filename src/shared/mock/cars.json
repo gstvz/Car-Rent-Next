@@ -7,16 +7,20 @@
       "model": "California",
       "price": "725",
       "thumbnail": "https://i.ibb.co/vX5GtS9/Mask-Group-11.png",
+      "alt": "A Ferrari California",
       "colors": [
         {
+          "alt": "A Red Ferrari California",
           "color": "Red",
           "photo": "https://i.ibb.co/Lg6wLCf/Mask-Group-13.png"
         },
         {
+          "alt": "A Yellow Ferrari California",
           "color": "Yellow",
           "photo": "https://i.ibb.co/HzQQXQL/kisspng-ferrari-f12-ferrari-250-gto-car-enzo-ferrari-yellow-ferrari-f12tdf-car-5a75455a25d4f3-490593.png"
         },
         {
+          "alt": "A Gray Ferrari California",
           "color": "Gray",
           "photo": "https://i.ibb.co/ZVJ97GN/kisspng-2013-ferrari-f12berlinetta-maranello-sports-car-ferrari-f12berlinetta-car-5a77b76c5c41d4-321.png"
         }
@@ -27,105 +31,120 @@
       "make": "Porsche",
       "model": "911 Turbo S",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/vX5GtS9/Mask-Group-11.png"
+      "thumbnail": "https://i.ibb.co/vX5GtS9/Mask-Group-11.png",
+      "alt": "A Porsche 911 Turbo S"
     },
     {
       "id": 3,
       "make": "Porsche",
       "model": "911 Turbo S",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/sFKS24z/No-Path-Copia-16.png"
+      "thumbnail": "https://i.ibb.co/sFKS24z/No-Path-Copia-16.png",
+      "alt": "A Porsche 911 Turbo S"
     },
     {
       "id": 4,
       "make": "Porsche",
       "model": "911 Turbo S",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/1npBhXc/No-Path-Copia-17-2x.png"
+      "thumbnail": "https://i.ibb.co/1npBhXc/No-Path-Copia-17-2x.png",
+      "alt": "A Porsche 911 Turbo S"
     },
     {
       "id": 5,
       "make": "Porsche",
       "model": "911 GT3 RS",
       "price": "825",
-      "thumbnail": "https://i.ibb.co/2tZR2Wq/kisspng-2018-porsche-911-porsche-930-car-porsche-911-gt3-2018-porsche-911-carrera-s-5b1b890fbdf223-1.png"
+      "thumbnail": "https://i.ibb.co/2tZR2Wq/kisspng-2018-porsche-911-porsche-930-car-porsche-911-gt3-2018-porsche-911-carrera-s-5b1b890fbdf223-1.png",
+      "alt": "A Porsche 911 GT3 RS"
     },
     {
       "id": 6,
       "make": "Bentley",
       "model": "Continental GT",
       "price": "825",
-      "thumbnail": "https://i.ibb.co/Fm4PzXT/Mask-Group-8.png"
+      "thumbnail": "https://i.ibb.co/Fm4PzXT/Mask-Group-8.png",
+      "alt": "A Bentley Continental GT"
     },
     {
       "id": 7,
       "make": "BMW",
       "model": "M1 Competition",
       "price": "825",
-      "thumbnail": "https://i.ibb.co/LR1XfHC/Mask-Group-9.png"
+      "thumbnail": "https://i.ibb.co/LR1XfHC/Mask-Group-9.png",
+      "alt": "A BMW M1 Competition"
     },
     {
       "id": 8,
       "make": "Alfa Romeo",
       "model": "4C Spider",
       "price": "825",
-      "thumbnail": "https://i.ibb.co/gPgFR87/Mask-Group-10.png"
+      "thumbnail": "https://i.ibb.co/gPgFR87/Mask-Group-10.png",
+      "alt": "An Alfa Romeo 4C Spider"
     },
     {
       "id": 9,
       "make": "McLaren",
       "model": "P1 GTR",
       "price": "925",
-      "thumbnail": "https://i.ibb.co/yp2C5Zz/No-Path-Copia-15.png"
+      "thumbnail": "https://i.ibb.co/yp2C5Zz/No-Path-Copia-15.png",
+      "alt": "A McLaren P1 GTR"
     },
     {
       "id": 10,
       "make": "Lamborghini",
       "model": "Aventador",
       "price": "925",
-      "thumbnail": "https://i.ibb.co/dBJfPRG/No-Path-Copia-14.png"
+      "thumbnail": "https://i.ibb.co/dBJfPRG/No-Path-Copia-14.png",
+      "alt": "A Lamborghini Aventador"
     },
     {
       "id": 11,
       "make": "Bugatti",
       "model": "Veyron Spider",
       "price": "925",
-      "thumbnail": "https://i.ibb.co/SNk6kFP/No-Path-Copia-13.png"
+      "thumbnail": "https://i.ibb.co/SNk6kFP/No-Path-Copia-13.png",
+      "alt": "A Bugatti Veyron Spider"
     },
     {
       "id": 12,
       "make": "Chevrolet",
       "model": "Corvett",
       "price": "925",
-      "thumbnail": "https://i.ibb.co/pjynMxx/Mask-Group-7.png"
+      "thumbnail": "https://i.ibb.co/pjynMxx/Mask-Group-7.png",
+      "alt": "A Chevrolet Corvett"
     },
     {
       "id": 13,
       "make": "Ferrari",
       "model": "California",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/kyh5cYM/ferrari-PNG10674.png"
+      "thumbnail": "https://i.ibb.co/kyh5cYM/ferrari-PNG10674.png",
+      "alt": "A Ferrari California"
     },
     {
       "id": 14,
       "make": "Rolls-Royce",
       "model": "Wraith",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/312cMfZ/No-Path-Copia-18.png"
+      "thumbnail": "https://i.ibb.co/312cMfZ/No-Path-Copia-18.png",
+      "alt": "A Rolls-Royce Wraith"
     },
     {
       "id": 15,
       "make": "Porsche",
       "model": "911 Turbo S",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/XFNQX3Z/Mask-Group-6.png"
+      "thumbnail": "https://i.ibb.co/XFNQX3Z/Mask-Group-6.png",
+      "alt": "A Porsche 911 Turbo S"
     },
     {
       "id": 16,
       "make": "Mercedes-Benz",
       "model": "AMG GTS",
       "price": "725",
-      "thumbnail": "https://i.ibb.co/HHWhVPY/Mask-Group-5.png"
+      "thumbnail": "https://i.ibb.co/HHWhVPY/Mask-Group-5.png",
+      "alt": "A Mercedes-Benz AMG GTS"
     }
   ]
 }

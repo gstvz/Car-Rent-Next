@@ -40,7 +40,7 @@ export const CarDetails = ({ activeColor, car }: Props) => {
                 <S.CarPhoto>
                   <Image
                     src={car.colors[activeColor].photo}
-                    alt="Car"
+                    alt={car.colors[activeColor].alt}
                     width={600}
                     height={300}
                   />

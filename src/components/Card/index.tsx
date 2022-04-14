@@ -34,7 +34,7 @@ export const Card = ({ car, onPress }: Props) => {
           src={car.thumbnail}
           height={107}
           width={240}
-          alt="Car"
+          alt={car.alt}
           objectFit="scale-down"
         />
       </S.CarImageWrapper>

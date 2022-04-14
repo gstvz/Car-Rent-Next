@@ -6,9 +6,11 @@ export type Car = {
   model: string;
   price: string;
   thumbnail: string;
+  alt: string;
 }
 
 export type CarColors = {
+  alt: string;
   color: string;
   photo: string;
 }
