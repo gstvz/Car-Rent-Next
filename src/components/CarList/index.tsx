@@ -14,7 +14,7 @@ export const CarList = ({ cars }: Props) => {
     <S.Container>
       <S.CarList>
         {cars.map((car) => (
-          <Card key={car.id} car={car} onPress={redirectToCar} />
+          <Card key={car.id} car={car} onPress={() => redirectToCar(car.id)} />
         ))}
       </S.CarList>
     </S.Container>
