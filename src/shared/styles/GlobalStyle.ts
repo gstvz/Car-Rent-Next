@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import "react-toastify/dist/ReactToastify.css";
 import "swiper/css";
+import "swiper/css/navigation";
 
 export const GlobalStyle = createGlobalStyle`
   * {

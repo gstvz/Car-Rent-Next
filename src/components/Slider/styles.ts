@@ -4,11 +4,24 @@ type isActiveProp = {
   isActive: boolean;
 };
 
+type ButtonSideProp = {
+  side: string;
+};
+
 export const Container = styled.div`
   display: flex;
   margin: 0 auto;
   padding-bottom: 2rem;
-  width: 85%;
+  position: relative;
+  width: 100%;
+`;
+
+export const Slide = styled.div`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 `;
 
 export const Card = styled.div<isActiveProp>`
@@ -25,4 +38,19 @@ export const Photo = styled.div<isActiveProp>`
     isActive
       ? "height: 24rem; width: 30rem; transform: translateX(10%)"
       : "height: 20rem; width: 26rem; transform: translateX(5%)"}
+`;
+
+export const SlideButton = styled.button<ButtonSideProp>`
+  align-items: center;
+  background-color: ${({ theme }) => theme.colors.text_default};
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  padding: 1rem;
+  position: absolute;
+  width: 4rem;
+
+  ${({ side }) => (side === "left" ? "left: 25%" : "right: 25%")};
 `;
