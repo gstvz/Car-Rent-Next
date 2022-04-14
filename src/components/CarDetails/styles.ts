@@ -7,6 +7,14 @@ export const Container = styled.div`
   width: 85%;
 `;
 
+export const ErrorContainer = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+`;
+
 export const Car = styled.div`
   flex: 1;
 `;
@@ -49,7 +57,9 @@ export const BookNowWrapper = styled.div`
   justify-content: center;
 `;
 
-export const IdAndColor = styled.aside``;
+export const IdAndColor = styled.aside`
+  width: 6rem;
+`;
 
 export const Id = styled.p`
   color: ${({ theme }) => theme.colors.text_default};
