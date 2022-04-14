@@ -12,7 +12,7 @@ const Car = ({ car }: Props) => {
   const { activeColor, handleSlideClick } = useSlide();
 
   return (
-    <Layout pageTitle="Car">
+    <Layout pageTitle={`${car.make} ${car.model}`}>
       <Section>
         <CarDetails activeColor={activeColor} car={car} />
         {car.colors && (
