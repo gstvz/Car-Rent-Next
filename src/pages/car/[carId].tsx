@@ -15,11 +15,13 @@ const Car = ({ car }: Props) => {
     <Layout pageTitle="Car">
       <Section>
         <CarDetails activeColor={activeColor} car={car} />
-        <Slider
-          activeColor={activeColor}
-          colors={car.colors}
-          handleSlideClick={handleSlideClick}
-        />
+        {car.colors && (
+          <Slider
+            activeColor={activeColor}
+            colors={car.colors}
+            handleSlideClick={handleSlideClick}
+          />
+        )}
       </Section>
     </Layout>
   );
