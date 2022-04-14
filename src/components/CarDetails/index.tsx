@@ -23,7 +23,9 @@ export const CarDetails = ({ activeColor, car }: Props) => {
         <>
           <S.Car>
             <S.Header>
-              <Image src={car.makeLogo} alt="Car" width={70} height={90} />
+              <S.CarMakeWrapper>
+                <Image src={car.makeLogo} alt="Car" width={70} height={90} />
+              </S.CarMakeWrapper>
               <S.CarInfoWrapper>
                 <S.MakeAndModel>{`${car.make} ${car.model}`}</S.MakeAndModel>
                 <S.PriceWrapper>
