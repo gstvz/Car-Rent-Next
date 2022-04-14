@@ -39,5 +39,6 @@ export const getStaticProps = async () => {
     props: {
       cars,
     },
+    revalidate: 60,
   };
 };
