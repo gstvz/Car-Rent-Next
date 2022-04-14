@@ -2,6 +2,7 @@ import * as S from "./styles";
 import Image from "next/image";
 import { Car } from "@types";
 import { ActionButton, ErrorMessage } from "@components";
+import { useActionButton } from "@hooks";
 
 type Props = {
   activeColor: number;
@@ -9,12 +10,14 @@ type Props = {
 };
 
 export const CarDetails = ({ activeColor, car }: Props) => {
+  const { handleBackToCatalog, handleBookNow } = useActionButton();
+
   return (
     <S.Container>
       {!car.colors ? (
         <S.ErrorContainer>
           <ErrorMessage message="This car is not available!" />
-          <ActionButton back onPress={() => {}} text="Back to catalog" />
+          <ActionButton back onPress={handleBackToCatalog} text="Back to catalog" />
         </S.ErrorContainer>
       ) : (
         <>
@@ -31,7 +34,7 @@ export const CarDetails = ({ activeColor, car }: Props) => {
             </S.Header>
             <S.PhotoWrapper>
               <S.CarPhotoWrapper>
-                <ActionButton back onPress={() => {}} text="Back to catalog" />
+                <ActionButton back onPress={handleBackToCatalog} text="Back to catalog" />
                 <S.CarPhoto>
                   <Image
                     src={car.colors[activeColor].photo}
@@ -42,7 +45,7 @@ export const CarDetails = ({ activeColor, car }: Props) => {
                 </S.CarPhoto>
               </S.CarPhotoWrapper>
               <S.BookNowWrapper>
-                <ActionButton forward onPress={() => {}} text="Book now" />
+                <ActionButton forward onPress={handleBookNow} text="Book now" />
               </S.BookNowWrapper>
             </S.PhotoWrapper>
           </S.Car>
