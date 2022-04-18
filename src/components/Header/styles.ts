@@ -123,6 +123,30 @@ export const SignButton = styled.button<SignButtonProps>`
   }
 `;
 
+export const UserWrapper = styled.div`
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 15px;
+`;
+
+export const UserButton = styled.button`
+  background: none;
+  border: 2px solid ${({ theme }) => theme.colors.button_primary};
+  border-radius: 50%;
+  padding: 0.5rem;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.button_primary};
+    border: 2px solid ${({ theme }) => theme.colors.button_primary};
+    color: ${({ theme }) => theme.colors.background_primary};
+  }
+
+  &:hover * {
+    color: ${({ theme }) => theme.colors.background_primary};
+  }
+`;
+
 export const MobileMenu = styled.button`
   background: none;
   border: none;

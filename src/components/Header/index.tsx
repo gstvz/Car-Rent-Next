@@ -3,16 +3,19 @@ import {
   IoCalendar,
   IoLocationSharp,
   IoMenuOutline,
+  IoPersonSharp,
   IoSearchOutline,
 } from "@icons";
 import { useTheme } from "styled-components";
 import Link from "next/link";
 import { useActionButton, useUnavailableToast } from "@hooks";
+import { useSession } from "next-auth/react";
 
 export const Header = () => {
+  const { data: session } = useSession();
   const theme = useTheme();
   const { showUnavailableToast } = useUnavailableToast();
-  const { handleSignIn, handleSignUp } = useActionButton();
+  const { handleSignIn, handleSignUp, handleSignOut } = useActionButton();
 
   return (
     <S.Header>
@@ -48,10 +51,23 @@ export const Header = () => {
           </S.SearchButton>
         </S.SearchBar>
         <S.ButtonsContainer>
-          <S.SignButton onClick={handleSignUp}>Sign up</S.SignButton>
-          <S.SignButton onClick={handleSignIn} border>
-            Sign in
-          </S.SignButton>
+          {!session ? (
+            <>
+              <S.SignButton onClick={handleSignUp}>Sign up</S.SignButton>
+              <S.SignButton onClick={handleSignIn} border>
+                Sign in
+              </S.SignButton>
+            </>
+          ) : (
+            <S.UserWrapper>
+              <S.UserButton onClick={showUnavailableToast}>
+                <IoPersonSharp size={14} color={theme.colors.button_primary} />
+              </S.UserButton>
+              <S.SignButton onClick={handleSignOut} border>
+                Sign out
+              </S.SignButton>
+            </S.UserWrapper>
+          )}
         </S.ButtonsContainer>
         <S.MobileMenu onClick={showUnavailableToast}>
           <IoMenuOutline size={28} />

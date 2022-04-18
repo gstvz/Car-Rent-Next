@@ -1,3 +1,4 @@
+import { signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useUnavailableToast } from "@hooks";
 
@@ -21,5 +22,15 @@ export const useActionButton = () => {
     router.push("/sign-up");
   };
 
-  return { handleGoHome, handleBookNow, handleSignIn, handleSignUp };
+  const handleSignOut = () => {
+    signOut();
+  };
+
+  return {
+    handleGoHome,
+    handleBookNow,
+    handleSignIn,
+    handleSignUp,
+    handleSignOut,
+  };
 };
