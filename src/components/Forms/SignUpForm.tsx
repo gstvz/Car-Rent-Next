@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IoArrowBack, IoArrowForward } from "@icons";
 import { registerSchema } from "@schemas";
+import { signupUser } from "@services";
 
 type Inputs = {
   name: string;
@@ -21,7 +22,7 @@ export const SignUpForm = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = (registerData) => {
-    console.log("oi");
+    signupUser(registerData);
   };
 
   return (
