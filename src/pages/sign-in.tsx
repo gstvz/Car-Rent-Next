@@ -1,8 +1,8 @@
-import * as S from "./styles";
+import * as S from "./authStyles";
 import Head from "next/head";
 import { AuthLogo, SignInForm } from "@components";
 
-const Auth = () => {
+const SignIn = () => {
   return (
     <>
       <Head>
@@ -16,4 +16,4 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+export default SignIn;

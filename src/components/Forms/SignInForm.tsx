@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IoArrowForward } from "@icons";
-import { loginSchema } from "src/shared/schemas";
+import { loginSchema } from "@schemas";
 
 type Inputs = {
   email: string;
