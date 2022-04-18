@@ -1,20 +1,59 @@
 import Link from "next/link";
 import * as S from "./styles";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
 import { IoArrowBack, IoArrowForward } from "@icons";
+import { registerSchema } from "src/shared/schemas";
+
+type Inputs = {
+  name: string;
+  email: string;
+  password: string;
+};
 
 export const SignUpForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Inputs>({
+    resolver: yupResolver(registerSchema),
+  });
+
+  const onSubmit: SubmitHandler<Inputs> = (registerData) => {
+    console.log("oi");
+  };
+
   return (
     <S.Container>
       <S.FormTitle>Sign Up</S.FormTitle>
-      <S.Form>
+      <S.Form onSubmit={handleSubmit(onSubmit)}>
         <S.Label htmlFor="name">
-          <S.Input type="text" id="name" placeholder="Name" />
+          <S.Input
+            type="text"
+            id="name"
+            placeholder="Name"
+            {...register("name")}
+          />
+          <S.InvalidInput>{errors.name?.message}</S.InvalidInput>
         </S.Label>
         <S.Label htmlFor="email">
-          <S.Input type="text" id="email" placeholder="Email" />
+          <S.Input
+            type="text"
+            id="email"
+            placeholder="Email"
+            {...register("email")}
+          />
+          <S.InvalidInput>{errors.email?.message}</S.InvalidInput>
         </S.Label>
         <S.Label htmlFor="password">
-          <S.Input type="text" id="password" placeholder="Password" />
+          <S.Input
+            type="password"
+            id="password"
+            placeholder="Password"
+            {...register("password")}
+          />
+          <S.InvalidInput>{errors.password?.message}</S.InvalidInput>
         </S.Label>
         <S.Button>
           Sign Up
