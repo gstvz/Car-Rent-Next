@@ -4,6 +4,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { IoArrowForward } from "@icons";
 import { loginSchema } from "@schemas";
+import { signinUser } from "@services";
+import { useRouter } from "next/router";
 
 type Inputs = {
   email: string;
@@ -11,6 +13,8 @@ type Inputs = {
 };
 
 export const SignInForm = () => {
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -19,8 +23,12 @@ export const SignInForm = () => {
     resolver: yupResolver(loginSchema),
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (loginData) => {
-    console.log("oi");
+  const onSubmit: SubmitHandler<Inputs> = async (loginData) => {
+    const login = await signinUser(loginData);
+
+    if (!login.error) {
+      return router.replace("/");
+    }
   };
 
   return (
