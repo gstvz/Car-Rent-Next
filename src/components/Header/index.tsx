@@ -7,11 +7,12 @@ import {
 } from "@icons";
 import { useTheme } from "styled-components";
 import Link from "next/link";
-import { useUnavailableToast } from "@hooks";
+import { useActionButton, useUnavailableToast } from "@hooks";
 
 export const Header = () => {
   const theme = useTheme();
   const { showUnavailableToast } = useUnavailableToast();
+  const { handleSignIn, handleSignUp } = useActionButton();
 
   return (
     <S.Header>
@@ -47,8 +48,8 @@ export const Header = () => {
           </S.SearchButton>
         </S.SearchBar>
         <S.ButtonsContainer>
-          <S.SignButton onClick={showUnavailableToast}>Sign up</S.SignButton>
-          <S.SignButton onClick={showUnavailableToast} border>
+          <S.SignButton onClick={handleSignUp}>Sign up</S.SignButton>
+          <S.SignButton onClick={handleSignIn} border>
             Sign in
           </S.SignButton>
         </S.ButtonsContainer>

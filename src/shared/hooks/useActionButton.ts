@@ -5,7 +5,7 @@ export const useActionButton = () => {
   const router = useRouter();
   const { showUnavailableToast } = useUnavailableToast();
 
-  const handleBackToCatalog = () => {
+  const handleGoHome = () => {
     router.push("/");
   };
 
@@ -13,5 +13,13 @@ export const useActionButton = () => {
     showUnavailableToast();
   };
 
-  return { handleBackToCatalog, handleBookNow };
+  const handleSignIn = () => {
+    router.push("/sign-in");
+  };
+
+  const handleSignUp = () => {
+    router.push("/sign-up");
+  };
+
+  return { handleGoHome, handleBookNow, handleSignIn, handleSignUp };
 };

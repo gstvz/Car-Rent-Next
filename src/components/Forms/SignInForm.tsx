@@ -63,7 +63,7 @@ export const SignInForm = () => {
           <IoArrowForward />
         </S.Button>
       </S.Form>
-      <Link href="/">
+      <Link href="/sign-up">
         <a>
           <S.ActionLink>
             Sign Up

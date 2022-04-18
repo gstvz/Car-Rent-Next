@@ -10,14 +10,14 @@ type Props = {
 };
 
 export const CarDetails = ({ activeColor, car }: Props) => {
-  const { handleBackToCatalog, handleBookNow } = useActionButton();
+  const { handleGoHome, handleBookNow } = useActionButton();
 
   return (
     <S.Container>
       {!car.colors ? (
         <S.ErrorContainer>
           <ErrorMessage message="This car is not available!" />
-          <ActionButton back onPress={handleBackToCatalog} text="Back to catalog" />
+          <ActionButton back onPress={handleGoHome} text="Back to catalog" />
         </S.ErrorContainer>
       ) : (
         <>
@@ -36,7 +36,7 @@ export const CarDetails = ({ activeColor, car }: Props) => {
             </S.Header>
             <S.PhotoWrapper>
               <S.CarPhotoWrapper>
-                <ActionButton back onPress={handleBackToCatalog} text="Back to catalog" />
+                <ActionButton back onPress={handleGoHome} text="Back to catalog" />
                 <S.CarPhoto>
                   <Image
                     src={car.colors[activeColor].photo}
