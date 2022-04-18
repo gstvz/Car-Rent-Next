@@ -1,12 +1,7 @@
 import { api } from "@services";
+import { User } from "@types";
 
-type NewUser = {
-  name: string;
-  email: string;
-  password: string;
-};
-
-export async function signupUser(newUser: NewUser) {
+export async function signupUser(newUser: User) {
   try {
     const { data } = await api.post("auth/signup", newUser);
     return data;
