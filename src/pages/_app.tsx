@@ -2,13 +2,14 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { ToastContainer } from "react-toastify";
 import { GlobalStyle, theme } from "@styles";
+import { SessionProvider } from "next-auth/react";
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps) {
   return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-      <GlobalStyle />
-      <ToastContainer
+    <SessionProvider session={session}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <ToastContainer
           position="top-right"
           autoClose={5000}
           hideProgressBar={false}
@@ -19,7 +20,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           draggable={false}
           pauseOnHover
         />
-    </ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
+    </SessionProvider>
   );
 }
 
