@@ -1,15 +1,19 @@
 import { Login } from "@types";
 import { signIn } from "next-auth/react";
+import { toast } from "react-toastify";
 
 export async function signinUser(user: Login) {
-  try {
-    const request = await signIn("credentials", {
-      email: user.email,
-      password: user.password,
-      redirect: false,
-    });
+  const request = await signIn("credentials", {
+    email: user.email,
+    password: user.password,
+    redirect: false,
+  });
+
+  if (request.error) {
+    toast.error("User is not signed up!");
     return request;
-  } catch (error) {
-    console.log("User was not found!");
+  } else {
+    toast.error("User signed in! 👌");
+    return request;
   }
 }

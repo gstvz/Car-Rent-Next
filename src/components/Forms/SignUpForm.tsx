@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { IoArrowBack, IoArrowForward } from "@icons";
 import { registerSchema } from "@schemas";
 import { signupUser } from "@services";
+import { useRouter } from "next/router";
 
 type Inputs = {
   name: string;
@@ -13,6 +14,7 @@ type Inputs = {
 };
 
 export const SignUpForm = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -21,8 +23,12 @@ export const SignUpForm = () => {
     resolver: yupResolver(registerSchema),
   });
 
-  const onSubmit: SubmitHandler<Inputs> = (registerData) => {
-    signupUser(registerData);
+  const onSubmit: SubmitHandler<Inputs> = async (registerData) => {
+    const signup = await signupUser(registerData);
+
+    if (signup) {
+      router.replace("/sign-in");
+    }
   };
 
   return (
