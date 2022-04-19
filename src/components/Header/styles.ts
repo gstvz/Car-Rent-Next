@@ -94,6 +94,14 @@ export const SearchButton = styled.button`
   margin-right: 0.6rem;
   height: 2.8rem;
   width: 2.8rem;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.button_primary};
+
+    * {
+      color: ${({ theme }) => theme.colors.background_primary};
+    }
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -140,10 +148,10 @@ export const UserButton = styled.button`
     background: ${({ theme }) => theme.colors.button_primary};
     border: 2px solid ${({ theme }) => theme.colors.button_primary};
     color: ${({ theme }) => theme.colors.background_primary};
-  }
 
-  &:hover * {
-    color: ${({ theme }) => theme.colors.background_primary};
+    * {
+      color: ${({ theme }) => theme.colors.background_primary};
+    }
   }
 `;
 
