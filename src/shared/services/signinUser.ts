@@ -13,7 +13,7 @@ export async function signinUser(user: Login) {
     toast.error("User is not signed up!");
     return request;
   } else {
-    toast.error("User signed in! 👌");
+    toast.success("User signed in! 👌");
     return request;
   }
 }
