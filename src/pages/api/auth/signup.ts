@@ -28,11 +28,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (isUserRegistered) {
     res.status(422).json({ message: "User is already registered!" });
     return;
+  } else {
+    users.push(newUser);
+    fs.writeFileSync(filePath, JSON.stringify(users));
+    res.status(201).json({ message: "User created!" });
+    return;
   }
-
-  users.push(newUser);
-  fs.writeFileSync(filePath, JSON.stringify(users));
-  res.status(201).json({ message: "User created!" });
 }
 
 export default handler;
