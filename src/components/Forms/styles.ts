@@ -14,6 +14,10 @@ export const FormTitle = styled.h2`
   font-style: italic;
   font-weight: ${({ theme }) => theme.fontWeights.regular_700};
   margin-bottom: 3rem;
+
+  @media (max-width: 1068px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const Form = styled.form`
@@ -24,6 +28,10 @@ export const Form = styled.form`
   flex-direction: column;
   max-width: 35.2rem;
   width: 100%;
+
+  @media (max-width: 1068px) {
+    width: 80%;
+  }
 `;
 
 export const Label = styled.label`
@@ -40,6 +48,10 @@ export const Input = styled.input`
   font-style: italic;
   font-weight: ${({ theme }) => theme.fontWeights.light_300};
   width: 100%;
+
+  @media (max-width: 1068px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const InvalidInput = styled.p`
@@ -55,6 +67,10 @@ export const PasswordLink = styled.p`
   font-weight: ${({ theme }) => theme.fontWeights.light_300};
   padding: 2rem 2rem 0 0;
   text-align: right;
+
+  @media (max-width: 1068px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Button = styled.button`
@@ -69,6 +85,10 @@ export const Button = styled.button`
   gap: 10px;
   justify-content: center;
   padding: 2rem;
+
+  @media (max-width: 1068px) {
+    font-size: 2.5rem;
+  }
 `;
 
 export const ActionLink = styled.p`
@@ -83,4 +103,8 @@ export const ActionLink = styled.p`
   padding: 3rem;
   text-decoration: none;
   text-align: right;
+
+  @media (max-width: 1068px) {
+    font-size: 2.5rem;
+  }
 `;
