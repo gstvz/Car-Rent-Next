@@ -94,6 +94,14 @@ export const SearchButton = styled.button`
   margin-right: 0.6rem;
   height: 2.8rem;
   width: 2.8rem;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.button_primary};
+
+    * {
+      color: ${({ theme }) => theme.colors.background_primary};
+    }
+  }
 `;
 
 export const ButtonsContainer = styled.div`
@@ -120,6 +128,30 @@ export const SignButton = styled.button<SignButtonProps>`
     background: ${({ theme }) => theme.colors.button_primary};
     border: 2px solid ${({ theme }) => theme.colors.button_primary};
     color: ${({ theme }) => theme.colors.background_primary};
+  }
+`;
+
+export const UserWrapper = styled.div`
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 15px;
+`;
+
+export const UserButton = styled.button`
+  background: none;
+  border: 2px solid ${({ theme }) => theme.colors.button_primary};
+  border-radius: 50%;
+  padding: 0.5rem;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.button_primary};
+    border: 2px solid ${({ theme }) => theme.colors.button_primary};
+    color: ${({ theme }) => theme.colors.background_primary};
+
+    * {
+      color: ${({ theme }) => theme.colors.background_primary};
+    }
   }
 `;
 

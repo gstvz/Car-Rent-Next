@@ -6,5 +6,6 @@ export {
   IoCloseCircleOutline,
   IoLocationSharp,
   IoMenuOutline,
+  IoPersonSharp,
   IoSearchOutline,
 } from "react-icons/io5";

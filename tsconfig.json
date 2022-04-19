@@ -15,6 +15,7 @@
       "@components": ["./src/components"],
       "@hooks": ["./src/shared/hooks"],
       "@icons": ["./src/shared/icons"],
+      "@schemas": ["./src/shared/schemas"],
       "@services": ["./src/shared/services"],
       "@styles": ["./src/shared/styles"],
       "@types": ["./src/shared/types"],
