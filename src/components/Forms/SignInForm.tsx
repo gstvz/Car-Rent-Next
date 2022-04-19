@@ -6,6 +6,7 @@ import { IoArrowForward } from "@icons";
 import { loginSchema } from "@schemas";
 import { signinUser } from "@services";
 import { useRouter } from "next/router";
+import { useUnavailableToast } from "@hooks";
 
 type Inputs = {
   email: string;
@@ -14,6 +15,7 @@ type Inputs = {
 
 export const SignInForm = () => {
   const router = useRouter();
+  const { showUnavailableToast } = useUnavailableToast();
 
   const {
     register,
@@ -53,9 +55,9 @@ export const SignInForm = () => {
           />
           <S.InvalidInput>{errors.password?.message}</S.InvalidInput>
         </S.Label>
-        <Link href="/">
+        <Link href="">
           <a>
-            <S.PasswordLink>I forgot my password</S.PasswordLink>
+            <S.PasswordLink onClick={showUnavailableToast}>I forgot my password</S.PasswordLink>
           </a>
         </Link>
         <S.Button>
