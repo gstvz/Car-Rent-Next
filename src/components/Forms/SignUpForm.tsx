@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Spinner } from "@chakra-ui/react";
 import * as S from "./styles";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -6,6 +7,7 @@ import { IoArrowBack, IoArrowForward } from "@icons";
 import { registerSchema } from "@schemas";
 import { signupUser } from "@services";
 import { useRouter } from "next/router";
+import { useIsLoading } from "@hooks";
 
 type Inputs = {
   name: string;
@@ -14,6 +16,7 @@ type Inputs = {
 };
 
 export const SignUpForm = () => {
+  const { isLoading, handleLoadingStatus } = useIsLoading();
   const router = useRouter();
   const {
     register,
@@ -24,10 +27,14 @@ export const SignUpForm = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (registerData) => {
+    handleLoadingStatus(true);
     const signup = await signupUser(registerData);
+
+    handleLoadingStatus(false);
 
     if (signup) {
       router.replace("/sign-in");
+      return;
     }
   };
 
@@ -63,8 +70,13 @@ export const SignUpForm = () => {
           <S.InvalidInput>{errors.password?.message}</S.InvalidInput>
         </S.Label>
         <S.Button>
-          Sign Up
-          <IoArrowForward />
+          {isLoading ? (
+            <Spinner size="xl" />
+          ) : (
+            <>
+              Sign Up <IoArrowForward />
+            </>
+          )}
         </S.Button>
       </S.Form>
       <Link href="/">
