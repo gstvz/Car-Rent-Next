@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Spinner } from "@chakra-ui/react";
 import * as S from "./styles";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -7,7 +6,7 @@ import { IoArrowForward } from "@icons";
 import { loginSchema } from "@schemas";
 import { signinUser } from "@services";
 import { useRouter } from "next/router";
-import { useIsLoading, useUnavailableToast } from "@hooks";
+import { useUnavailableToast } from "@hooks";
 
 type Inputs = {
   email: string;
@@ -17,7 +16,6 @@ type Inputs = {
 export const SignInForm = () => {
   const router = useRouter();
   const { showUnavailableToast } = useUnavailableToast();
-  const { isLoading, handleLoadingStatus } = useIsLoading();
 
   const {
     register,
@@ -28,17 +26,12 @@ export const SignInForm = () => {
   });
 
   const onSubmit: SubmitHandler<Inputs> = async (loginData) => {
-    handleLoadingStatus(true);
     const login = await signinUser(loginData);
 
-    handleLoadingStatus(false);
-
     if (!login.error) {
-      router.replace("/");
+      return router.replace("/");
     }
   };
-
-  console.log(isLoading);
 
   return (
     <S.Container>
@@ -64,19 +57,12 @@ export const SignInForm = () => {
         </S.Label>
         <Link href="">
           <a>
-            <S.PasswordLink onClick={showUnavailableToast}>
-              I forgot my password
-            </S.PasswordLink>
+            <S.PasswordLink onClick={showUnavailableToast}>I forgot my password</S.PasswordLink>
           </a>
         </Link>
         <S.Button>
-          {isLoading ? (
-            <Spinner size="xl" />
-          ) : (
-            <>
-              Log In <IoArrowForward />
-            </>
-          )}
+          Log In
+          <IoArrowForward />
         </S.Button>
       </S.Form>
       <Link href="/sign-up">
